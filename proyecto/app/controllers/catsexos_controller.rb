@@ -1,0 +1,2 @@
+class CatsexosController < ApplicationController
+end

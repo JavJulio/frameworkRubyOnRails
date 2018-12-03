@@ -1,0 +1,76 @@
+<%= form_for @persona do |f| %>
+
+  <div class="container">
+    <br>
+    <div class="row">
+      <div class="col">
+        <br>
+        <div class="row">
+          <div class="col">
+            <%= f.label :"Nombre:" %>
+          </div>
+          <div class="col">
+            <%= f.text_field :nombre %>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col">
+            <%= f.label :"Apellido Paterno:" %>
+          </div>
+          <div class="col">
+            <%= f.text_field :apellidoPa %>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col">
+            <%= f.label :"Apellido Materno:" %>
+          </div>
+          <div class="col">
+            <%= f.text_field :apellidoMa %>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col">
+            <%= f.label :"Telefono:" %>
+          </div>
+          <div class="col">
+            <%= f.number_field :telefono %>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col">
+            <%= f.label :"Fecha de Nacimiento:" %>
+          </div>
+          <div class="col">
+            <%= f.date_select :fechaNacimiento %>
+          <!--  <%= f.date_field :fechaNacimiento %> -->
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col">
+            <%= f.label :"Sexo" %>
+          </div>
+          <div class="col">
+            <%= f.collection_select :catsexo_id, Catsexo.order(:strValor),
+            :id, :strValor, include_blank: true %>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col">
+            <%= f.submit "Crear Persona", data: { confirm: "se a creado correctamente la persona"} %>
+          </div>
+          <div class="col">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% end %>

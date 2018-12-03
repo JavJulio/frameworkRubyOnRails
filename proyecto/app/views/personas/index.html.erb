@@ -1,0 +1,28 @@
+<h1>Listado de Personas</h1>
+<%= link_to "Agregar Persona", personas_new_path %>
+<br><br>
+
+<table class="table table-hover table-borde">
+  <tr>
+    <thead>
+      <th>Nombre</th>
+      <th>Apellido Paterno</th>
+      <th>Apellido Materno</th>
+      <th>Telefono</th>
+      <th>Fecha Nacimiento</th>
+      <th>Sexo</th>
+    </thead>
+  </tr>
+  <% @personas.each do |persona| %>
+  <tr>
+    <td><%= persona.nombre %></td>
+    <td><%= persona.apellidoPa %></td>
+    <td><%= persona.apellidoMa %></td>
+    <td><%= persona.telefono %></td>
+    <td><%= persona.fechaNacimiento %></td>
+    <td><%= persona.catsexo.strValor %></td>
+    <td><%= link_to "Editar", edit_persona_path(persona) %></td>
+    <td><%= link_to "Eliminar", persona, method: :delete, data: { confirm: "desea eliminar"} %></td>
+  </tr>
+  <% end %>
+</table>

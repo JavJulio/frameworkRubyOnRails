@@ -1,0 +1,2 @@
+class Catsexo < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+module CatsexosHelper
+end

@@ -1,0 +1,76 @@
+<%= form_for @persona do |f| %>
+
+  <div class="container">
+    <br>
+    <div class="row">
+      <div class="">
+        <br>
+        <div class="row">
+          <div class="">
+            <%= f.label :"Nombre:" %>
+          </div>
+          <div class="">
+            <%= f.text_field :nombre %>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="">
+            <%= f.label :"Apellido Paterno:" %>
+          </div>
+          <div class="">
+            <%= f.text_field :apellidoPa %>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="">
+            <%= f.label :"Apellido Materno:" %>
+          </div>
+          <div class="">
+            <%= f.text_field :apellidoMa %>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="">
+            <%= f.label :"Telefono:" %>
+          </div>
+          <div class="">
+            <%= f.number_field :telefono %>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="">
+            <%= f.label :"Fecha de Nacimiento:" %>
+          </div>
+          <div class="">
+            <%= f.date_select :fechaNacimiento %>
+          <!--  <%= f.date_field :fechaNacimiento %> -->
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="">
+            <%= f.label :"Sexo" %>
+          </div>
+          <div class="">
+            <%= f.collection_select :catsexo_id, Catsexo.order(:strValor),
+            :id, :strValor, include_blank: true %>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="">
+            <%= f.submit "Aceptar" %>
+          </div>
+          <div class="">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% end %>
